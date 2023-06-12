@@ -24,8 +24,8 @@
 						<td>${todo.description}</td>
 						<td>${todo.targetDate}</td>
 						<td>${todo.done}</td>
-						<td><a href="deleteTodo?id=${todo.id}" type="button" class="btn btn-warning"/a>Delete ${todo.id}</td>
-						<td><a href="updateTodo?id=${todo.id}" type="button" class="btn btn-success"/a>update ${todo.id}</td>
+						<td><a href="deleteTodo?id=${todo.id}" type="button" class="btn btn-warning"/a>Delete </td>
+						<td><a href="updateTodo?id=${todo.id}" type="button" class="btn btn-success"/a>update </td>
 					</tr>
 				</c:forEach>
 			</tbody>
