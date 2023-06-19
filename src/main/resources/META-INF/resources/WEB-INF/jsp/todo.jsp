@@ -22,12 +22,12 @@
 	</fieldset>
 
 	<fieldset class="mb-3">
-  		<label for="done">Task completed:</label>
-  		<select name="done" id="done">
-			<option value="false" class="btn btn-danger">No</option>
-			<option value="true" class="btn btn-success">Yes</option>
-  		</select>
-   	</fieldset>
+	<label for="done" required="required">Task completed:</label>
+	  <input type="radio" id="done" name="done" value="true" >
+      <label for="done">Yes</label>
+      <input type="radio" id="done" name="done" value="false" required="required">
+      <label for="done">No</label>
+     </fieldset>
 
 	<script src="webjars/jquery/3.6.0/jquery.min.js"></script>
 	<script src="webjars/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
