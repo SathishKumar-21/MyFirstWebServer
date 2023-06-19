@@ -25,7 +25,7 @@ public class TodoService {
                 LocalDate.now().plusMonths(6),false));
     }
     public List<Todo> findByUsername(String username){
-        Predicate<? super Todo> Predicate = todo -> todo.getUsername().equals(username);
+        Predicate<? super Todo> Predicate = todo -> todo.getUsername().equalsIgnoreCase(username);
         return todos.stream().filter(Predicate).toList();
     }
 
