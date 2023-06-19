@@ -46,12 +46,12 @@ public class TodoControllerJpa {
     }
 
     @RequestMapping(value="Add-Todo",method = RequestMethod.POST)
-    private String addNewTodoPage(ModelMap map, @Valid Todo todo, BindingResult result) {
+    private String addNewTodoPage(ModelMap map, @Valid Todo todo, BindingResult result, @RequestParam boolean done) {
 //        if (result.hasErrors()){
 //            return "todo";
 //        }
         String username = getLoggedInUsername(map);
-        todo.setDone(false);
+        todo.setDone(done);
         todo.setUsername(username);
         todoRepository.save(todo);
 //        todoService.addTodo(username, todo.getDescription(), LocalDate.now().plusYears(1),false);
@@ -71,13 +71,13 @@ public class TodoControllerJpa {
         return "todo";
     }
     @RequestMapping(value="updateTodo",method = RequestMethod.POST)
-    private String updateTodo(ModelMap map, @Valid Todo todo, BindingResult result) {
+    private String updateTodo(ModelMap map, @Valid Todo todo, BindingResult result,@RequestParam Boolean done) {
         if (result.hasErrors()){
             return "todo";
         }
         String username = getLoggedInUsername(map);
         todo.setUsername(username);
-        todo.setDone(false);
+        todo.setDone(done);
         todoRepository.save(todo);
 //        todoService.updateTodo(todo);
         return "redirect:list-todo";
